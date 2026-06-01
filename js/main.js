@@ -106,75 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ----------------------------------------------------------
-    7. 開業診断（リアルタイム結果表示）
-
-    Q2〜Q5の回答に基づき、おすすめサービスをリアルタイムで表示。
-    Q1は状況確認のみ（結果には影響しない）。
-  ---------------------------------------------------------- */
-  const DIAG_SERVICES = [
-    { q: 'dq2', val: 'no', key: 'hp',        label: '🖥️ ホームページ制作' },
-    { q: 'dq3', val: 'no', key: 'google',    label: '📍 Googleマップ登録サポート' },
-    { q: 'dq4', val: 'no', key: 'line',      label: '💬 LINE公式アカウント構築' },
-    { q: 'dq5', val: 'no', key: 'instagram', label: '📸 Instagram整備' },
-  ];
-
-  const diagEmpty = document.getElementById('diagEmpty');
-  const diagBody  = document.getElementById('diagBody');
-  const diagRecs  = document.getElementById('diagRecs');
-  const diagPack  = document.getElementById('diagPack');
-  const diagOk    = document.getElementById('diagOk');
-
-  function getRadio(name) {
-    const el = document.querySelector(`[name="${name}"]:checked`);
-    return el ? el.value : null;
-  }
-
-  function updateDiagnosis() {
-    // Q2〜Q5が1つでも回答されたら結果表示
-    const answered = ['dq2','dq3','dq4','dq5'].some(q => getRadio(q) !== null);
-    if (!answered) return;
-
-    // おすすめサービスを収集
-    const recs = DIAG_SERVICES.filter(s => getRadio(s.q) === s.val);
-
-    diagEmpty.hidden = true;
-    diagBody.hidden  = false;
-
-    if (recs.length === 0) {
-      // 全て整っている場合
-      diagRecs.innerHTML = '';
-      diagPack.hidden = true;
-      diagOk.hidden   = false;
-    } else {
-      diagOk.hidden = true;
-      diagRecs.innerHTML = recs
-        .map(r => `<li>${r.label}</li>`)
-        .join('');
-
-      // 4つ全部必要なら開業スタートパックを提案
-      const allCore = ['hp','google','line','instagram'].every(
-        k => recs.some(r => r.key === k)
-      );
-      if (allCore) {
-        diagPack.hidden = false;
-        diagPack.innerHTML = `
-          <div class="diag-result__pack-badge">
-            → 開業スタートパック（¥39,800）がおすすめです
-          </div>`;
-      } else {
-        diagPack.hidden = true;
-      }
-    }
-  }
-
-  // ラジオボタン変更を監視
-  document.querySelectorAll('[name^="dq"]').forEach(r => {
-    r.addEventListener('change', updateDiagnosis);
-  });
-
-
-  /* ----------------------------------------------------------
-    8. セルフ見積もり（パック自動判定）
+    7. セルフ見積もり（パック自動判定）
 
     チェックされたサービスに最適なパックを自動適用し、
     追加オプションと合計金額をリアルタイム表示。

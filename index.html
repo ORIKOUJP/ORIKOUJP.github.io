@@ -34,9 +34,9 @@
       <a href="#top" class="header__logo">R Design</a>
       <nav class="header__nav" aria-label="メインナビゲーション">
         <ul class="header__nav-list">
-          <li><a href="#pain"      class="header__nav-link">お悩み</a></li>
           <li><a href="#services"  class="header__nav-link">サービス</a></li>
           <li><a href="#pricing"   class="header__nav-link">料金</a></li>
+          <li><a href="#about"     class="header__nav-link">運営者</a></li>
           <li><a href="#works"     class="header__nav-link">事例</a></li>
           <li><a href="#contact"   class="header__nav-link">相談する</a></li>
         </ul>
@@ -48,9 +48,9 @@
     </div>
     <nav class="header__drawer" id="drawer" aria-label="スマホナビゲーション">
       <ul class="header__drawer-list">
-        <li><a href="#pain"     class="header__drawer-link">お悩み</a></li>
         <li><a href="#services" class="header__drawer-link">サービス</a></li>
         <li><a href="#pricing"  class="header__drawer-link">料金</a></li>
+        <li><a href="#about"    class="header__drawer-link">運営者</a></li>
         <li><a href="#works"    class="header__drawer-link">事例</a></li>
         <li><a href="#contact"  class="header__drawer-link">相談する</a></li>
         <li><a href="#contact" class="btn btn--primary" style="display:block;text-align:center;margin-top:8px;">無料相談はこちら</a></li>
@@ -78,8 +78,7 @@
           </h1>
 
           <p class="hero__desc">
-            ホームページ制作だけでなく、Googleマップ・LINE公式アカウント・<br class="pc-only">
-            Instagram整備まで対応。<br>
+            ホームページ制作だけでなく、Googleマップ・LINE公式アカウント・Instagram整備まで対応。<br>
             個人事業主・小規模店舗の開業と集客をサポートします。
           </p>
 
@@ -186,94 +185,7 @@
 
 
     <!-- ============================================
-      DIAGNOSIS ③ 開業診断（新規）
-    ============================================ -->
-    <section class="section section--gray" id="diagnosis">
-      <div class="container">
-
-        <div class="section__header js-fade">
-          <span class="section__eyebrow">Diagnosis</span>
-          <h2 class="section__title">開業診断</h2>
-          <p class="section__desc">選択するだけで、あなたに必要なサービスがわかります。入力不要・無料。</p>
-        </div>
-
-        <div class="diag-box js-fade">
-
-          <!-- 質問エリア -->
-          <div class="diag-qs">
-
-            <div class="diag-q">
-              <p class="diag-q__text"><span class="diag-q__no">Q1</span>現在の状況を教えてください</p>
-              <div class="diag-q__opts">
-                <label class="diag-opt"><input type="radio" name="dq1" value="before"><span>これから開業する</span></label>
-                <label class="diag-opt"><input type="radio" name="dq1" value="open"><span>開業済み</span></label>
-                <label class="diag-opt"><input type="radio" name="dq1" value="side"><span>副業として始めたい</span></label>
-              </div>
-            </div>
-
-            <div class="diag-q">
-              <p class="diag-q__text"><span class="diag-q__no">Q2</span>ホームページはありますか？</p>
-              <div class="diag-q__opts">
-                <label class="diag-opt"><input type="radio" name="dq2" value="yes"><span>ある</span></label>
-                <label class="diag-opt"><input type="radio" name="dq2" value="no"><span>ない</span></label>
-              </div>
-            </div>
-
-            <div class="diag-q">
-              <p class="diag-q__text"><span class="diag-q__no">Q3</span>Googleマップに登録していますか？</p>
-              <div class="diag-q__opts">
-                <label class="diag-opt"><input type="radio" name="dq3" value="yes"><span>している</span></label>
-                <label class="diag-opt"><input type="radio" name="dq3" value="no"><span>していない</span></label>
-              </div>
-            </div>
-
-            <div class="diag-q">
-              <p class="diag-q__text"><span class="diag-q__no">Q4</span>LINE公式アカウントはありますか？</p>
-              <div class="diag-q__opts">
-                <label class="diag-opt"><input type="radio" name="dq4" value="yes"><span>ある</span></label>
-                <label class="diag-opt"><input type="radio" name="dq4" value="no"><span>ない</span></label>
-              </div>
-            </div>
-
-            <div class="diag-q">
-              <p class="diag-q__text"><span class="diag-q__no">Q5</span>Instagramは運用していますか？</p>
-              <div class="diag-q__opts">
-                <label class="diag-opt"><input type="radio" name="dq5" value="yes"><span>している</span></label>
-                <label class="diag-opt"><input type="radio" name="dq5" value="no"><span>していない</span></label>
-              </div>
-            </div>
-
-          </div><!-- /.diag-qs -->
-
-          <!-- 結果エリア（リアルタイム更新） -->
-          <div class="diag-result" id="diagResult">
-
-            <div class="diag-result__empty" id="diagEmpty">
-              <p class="diag-result__empty-icon">📋</p>
-              <p>上の質問に答えると<br>おすすめのサービスが<br>表示されます</p>
-            </div>
-
-            <div class="diag-result__body" id="diagBody" hidden>
-              <p class="diag-result__heading">あなたにおすすめ</p>
-              <ul class="diag-result__recs" id="diagRecs"></ul>
-              <div class="diag-result__pack" id="diagPack" hidden></div>
-              <div class="diag-result__ok" id="diagOk" hidden>
-                <p>Web環境は整っています！<br>さらなる改善についてもご相談ください。</p>
-              </div>
-              <a href="#contact" class="btn btn--primary btn--block diag-result__cta">
-                この内容で相談する →
-              </a>
-            </div>
-
-          </div><!-- /.diag-result -->
-
-        </div><!-- /.diag-box -->
-      </div>
-    </section>
-
-
-    <!-- ============================================
-      SERVICES ⑤ 「開業・集客サポート」として構成
+      SERVICES サポート内容
     ============================================ -->
     <section class="section" id="services">
       <div class="container">
@@ -514,6 +426,83 @@
 
 
     <!-- ============================================
+      ABOUT 運営者紹介 ③ 新規追加
+    ============================================ -->
+    <section class="section about-section" id="about">
+      <div class="container">
+
+        <div class="section__header js-fade">
+          <span class="section__eyebrow">About</span>
+          <h2 class="section__title">R Designについて</h2>
+        </div>
+
+        <div class="about-inner js-fade">
+
+          <!-- 左: プロフィール写真 -->
+          <div class="about-photo">
+            <!--
+              ★ 実際の写真に差し替える場合:
+              下のプレースホルダーを削除して以下に変更してください
+              <img src="images/profile.jpg" alt="R Design プロフィール" class="about-photo__img">
+              推奨サイズ: 400x400px（正方形）
+            -->
+            <div class="about-photo__placeholder">
+              <span class="about-photo__initial">R</span>
+            </div>
+            <!-- 特徴タグ -->
+            <ul class="about-features">
+              <li class="about-feature"><span>✓</span> 個人対応</li>
+              <li class="about-feature"><span>✓</span> 買い切り料金</li>
+              <li class="about-feature"><span>✓</span> 最短3日対応</li>
+              <li class="about-feature"><span>✓</span> 相談ベースOK</li>
+            </ul>
+          </div>
+
+          <!-- 右: テキスト -->
+          <div class="about-body">
+
+            <h3 class="about-heading">
+              はじめまして。<br>R Designです。
+            </h3>
+
+            <p class="about-text">
+              大阪を拠点に、個人事業主・小規模事業者向けのホームページ制作や集客サポートを行っています。
+            </p>
+
+            <p class="about-text">
+              ホームページ制作だけでなく、
+            </p>
+
+            <ul class="about-service-list">
+              <li>・Googleマップ登録サポート</li>
+              <li>・LINE公式アカウント構築</li>
+              <li>・Instagram整備</li>
+            </ul>
+
+            <p class="about-text">
+              など、開業時に必要なWeb周りをまとめてサポートしています。
+            </p>
+
+            <p class="about-text about-text--quote">
+              「ホームページを作りたい」ではなく「何から始めればいいかわからない」という状態でも大丈夫です。
+            </p>
+
+            <p class="about-text">
+              状況をお聞きした上で、必要なものだけをご提案します。
+            </p>
+
+            <!-- ⑤ CTA -->
+            <a href="#contact" class="btn btn--primary btn--lg about-cta">
+              まずは相談してみる →
+            </a>
+
+          </div><!-- /.about-body -->
+        </div><!-- /.about-inner -->
+      </div>
+    </section>
+
+
+    <!-- ============================================
       WORKS 制作事例
     ============================================ -->
     <section class="section section--gray" id="works">
@@ -685,9 +674,9 @@
       <p class="footer__logo">R Design</p>
       <p class="footer__tagline">個人事業主・小規模店舗向けの開業・集客サポート</p>
       <nav class="footer__nav" aria-label="フッターナビゲーション">
-        <a href="#services">サポート内容</a>
+        <a href="#services">サービス</a>
         <a href="#pricing">料金</a>
-        <a href="#estimate">見積もり</a>
+        <a href="#about">運営者</a>
         <a href="#works">制作事例</a>
         <a href="#contact">お問い合わせ</a>
       </nav>

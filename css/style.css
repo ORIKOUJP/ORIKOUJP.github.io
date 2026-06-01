@@ -1430,8 +1430,10 @@ button {
 
 
 /* ============================================================
-  新セクション: 開業診断（diagnosis）③
+  新セクション: 開業診断（diagnosis）— 削除済み ①
+  以下のスタイルは不要のためコメントアウト
 ============================================================ */
+/*
 .diag-box {
   display: grid;
   grid-template-columns: 1fr;
@@ -1637,6 +1639,9 @@ button {
     min-height: 360px;
   }
 }
+
+
+*/
 
 
 /* ============================================================
@@ -1909,5 +1914,162 @@ button {
     position: sticky;
     top: 80px;
     min-height: 360px;
+  }
+}
+
+
+/* ============================================================
+  新セクション: 運営者紹介（about）③ 新規追加
+============================================================ */
+.about-section {
+  background: #fff;
+}
+
+/* 2カラムレイアウト */
+.about-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+/* ─── 左: 写真エリア ─── */
+.about-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* プレースホルダー（実際の写真に差し替えてください） */
+.about-photo__placeholder {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--clr-accent-light), rgba(79,70,229,0.15));
+  border: 3px solid var(--clr-accent-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-photo__initial {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--clr-accent);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+/* 実際の写真タグ用スタイル */
+.about-photo__img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--clr-accent-light);
+}
+
+/* 特徴リスト */
+.about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  max-width: 200px;
+}
+
+.about-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--clr-text-sub);
+  padding: 8px 14px;
+  background: var(--clr-bg-gray);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--clr-border);
+}
+
+.about-feature span {
+  color: var(--clr-accent);
+  font-weight: 700;
+}
+
+/* ─── 右: テキストエリア ─── */
+.about-body {
+  flex: 1;
+}
+
+.about-heading {
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  color: var(--clr-text);
+}
+
+.about-text {
+  font-size: 15px;
+  color: var(--clr-text-sub);
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+/* 引用っぽいスタイル（「ホームページを作りたい」ではなく…の部分） */
+.about-text--quote {
+  padding: 16px 20px;
+  background: var(--clr-accent-light);
+  border-left: 3px solid var(--clr-accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--clr-text);
+  font-weight: 500;
+}
+
+.about-service-list {
+  margin-bottom: 16px;
+  padding-left: 8px;
+}
+
+.about-service-list li {
+  font-size: 15px;
+  color: var(--clr-text-sub);
+  line-height: 2;
+}
+
+.about-cta {
+  margin-top: 28px;
+  display: inline-flex;
+}
+
+/* デスクトップ: 横並び */
+@media (min-width: 768px) {
+  .about-inner {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 56px;
+  }
+
+  .about-photo {
+    flex-shrink: 0;
+    width: 200px;
+  }
+
+  .about-photo__placeholder,
+  .about-photo__img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-photo__initial {
+    font-size: 72px;
+  }
+
+  .about-features {
+    max-width: 200px;
   }
 }
