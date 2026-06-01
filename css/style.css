@@ -687,6 +687,103 @@ button {
 
 
 /* ============================================================
+  7-0. お悩みセクション（pain-section）⑥ 新規追加
+============================================================ */
+.pain-section {
+  background: #fff;
+}
+
+.pain-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* お悩みリスト */
+.pain-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 680px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.pain-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--clr-border);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--clr-text);
+  line-height: 1.65;
+  transition: background var(--duration) var(--ease);
+}
+
+.pain-list__item:first-child {
+  border-top: 1px solid var(--clr-border);
+}
+
+.pain-list__item:hover {
+  background: var(--clr-bg-gray);
+}
+
+.pain-list__icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* 解決メッセージ */
+.pain-resolve {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.pain-resolve__arrow {
+  font-size: 32px;
+  color: var(--clr-accent);
+  font-weight: 700;
+  line-height: 1;
+  animation: bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+.pain-resolve__box {
+  background: var(--clr-accent-light);
+  border: 1.5px solid rgba(79,70,229,0.15);
+  border-radius: var(--radius-xl);
+  padding: 40px 32px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.pain-resolve__lead {
+  font-size: clamp(18px, 4vw, 22px);
+  font-weight: 700;
+  color: var(--clr-accent);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.pain-resolve__desc {
+  font-size: 14px;
+  color: var(--clr-text-sub);
+  line-height: 1.9;
+  margin-bottom: 28px;
+}
+
+
+/* ============================================================
   7. サービスカード
 ============================================================ */
 .services-grid {
